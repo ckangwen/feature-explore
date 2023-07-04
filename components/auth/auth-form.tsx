@@ -2,12 +2,12 @@
 
 import * as React from "react";
 import { useSearchParams } from "next/navigation";
-import { set, useForm } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { cn } from "@/lib/utils";
 import { userAuthSchema, UserAuthSchema } from "auth/schema";
 import { signIn } from "next-auth/react";
-
+import { useRouter } from 'next/navigation';
 import { Input, Label, toast, buttonVariants, Icons } from "ui";
 import { IResponse } from "@/types";
 
@@ -28,6 +28,7 @@ export default function UserAuthForm({
   } = useForm<UserAuthSchema>({
     resolver: zodResolver(userAuthSchema),
   });
+  const router = useRouter();
   const [isLoading, setIsLoading] = React.useState<boolean>(false);
   const searchParams = useSearchParams();
 
@@ -60,10 +61,8 @@ export default function UserAuthForm({
         email: formData.email,
         password: formData.password,
         redirect: false,
-        callbackUrl: searchParams?.get("from") || "/",
       });
 
-      console.log(signInResult);
       setIsLoading(false);
 
       if (!signInResult?.ok) {
@@ -81,10 +80,13 @@ export default function UserAuthForm({
         });
       }
 
-      return toast({
+      toast({
         title: "提示",
         description: "登录成功",
+        duration: 1500,
       });
+
+      router.push(searchParams.get("redirect") || "/dashboard");
     }
   }
 

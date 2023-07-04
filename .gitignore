@@ -37,3 +37,6 @@ next-env.d.ts
 .history
 .vscode
 .env
+prisma/migrations
+prisma/database.db
+prisma/database.db-journal

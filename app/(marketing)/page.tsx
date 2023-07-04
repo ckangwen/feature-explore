@@ -17,7 +17,7 @@ export default async function Page() {
             everything. Follow along as we figure this out together.
           </p>
           <div className="space-x-4">
-            <Link href="/login" className={cn(buttonVariants({ size: "lg" }))}>
+            <Link href="/signin" className={cn(buttonVariants({ size: "lg" }))}>
               Get Started
             </Link>
             <Link

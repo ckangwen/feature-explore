@@ -20,7 +20,7 @@ export default async function MarketingLayout({
           <MainNav items={siteConfig.nav} />
           <nav>
             <Link
-              href="/login"
+              href="/signin"
               className={cn(
                 buttonVariants({ variant: "secondary", size: "sm" }),
                 "px-4"
