@@ -24,6 +24,7 @@
       "auth/*": ["./lib/auth/*"],
       "ui": ["./components/ui/index.ts"],
       "db": ["./prisma/index.ts"],
+      "hooks": ["./hooks/index.ts"],
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
