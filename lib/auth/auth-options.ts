@@ -80,20 +80,13 @@ export const authOptions: NextAuthOptions = {
         }
 
         if (!user.password) {
-          throw new Error(
-            getSignInErrorMessage(SignInErrorCode.UserMissingPassword)
-          );
+          throw new Error(getSignInErrorMessage(SignInErrorCode.UserMissingPassword));
         }
 
-        const isCorrectPassword = await verifyPassword(
-          credentials.password,
-          user.password
-        );
+        const isCorrectPassword = await verifyPassword(credentials.password, user.password);
 
         if (!isCorrectPassword) {
-          throw new Error(
-            getSignInErrorMessage(SignInErrorCode.IncorrectPassword)
-          );
+          throw new Error(getSignInErrorMessage(SignInErrorCode.IncorrectPassword));
         }
 
         return {

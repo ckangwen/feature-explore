@@ -13,8 +13,8 @@ export default async function Page() {
             An example app built using Next.js 13 server components.
           </h1>
           <p className="max-w-[42rem] leading-normal text-muted-foreground sm:text-xl sm:leading-8">
-            I&apos;m building a web app with Next.js 13 and open sourcing
-            everything. Follow along as we figure this out together.
+            I&apos;m building a web app with Next.js 13 and open sourcing everything. Follow along
+            as we figure this out together.
           </p>
           <div className="space-x-4">
             <Link href="/signin" className={cn(buttonVariants({ size: "lg" }))}>
@@ -36,13 +36,10 @@ export default async function Page() {
         className="container space-y-6 bg-slate-50 py-8 dark:bg-transparent md:py-12 lg:py-24"
       >
         <div className="mx-auto flex max-w-[58rem] flex-col items-center space-y-4 text-center">
-          <h2 className="font-heading text-3xl leading-[1.1] sm:text-3xl md:text-6xl">
-            Features
-          </h2>
+          <h2 className="font-heading text-3xl leading-[1.1] sm:text-3xl md:text-6xl">Features</h2>
           <p className="max-w-[85%] leading-normal text-muted-foreground sm:text-lg sm:leading-7">
-            This project is an experiment to see how a modern app, with features
-            like auth, subscriptions, API routes, and static pages would work in
-            Next.js 13 app dir.
+            This project is an experiment to see how a modern app, with features like auth,
+            subscriptions, API routes, and static pages would work in Next.js 13 app dir.
           </p>
         </div>
         <div className="mx-auto grid justify-center gap-4 sm:grid-cols-2 md:max-w-[64rem] md:grid-cols-3">
@@ -66,9 +63,7 @@ export default async function Page() {
               </svg>
               <div className="space-y-2">
                 <h3 className="font-bold">React 18</h3>
-                <p className="text-sm">
-                  Server and Client Components. Use hook.
-                </p>
+                <p className="text-sm">Server and Client Components. Use hook.</p>
               </div>
             </div>
           </div>
@@ -93,8 +88,7 @@ export default async function Page() {
               <div className="space-y-2">
                 <h3 className="font-bold">Components</h3>
                 <p className="text-sm text-muted-foreground">
-                  UI components built using Radix UI and styled with Tailwind
-                  CSS.
+                  UI components built using Radix UI and styled with Tailwind CSS.
                 </p>
               </div>
             </div>
@@ -134,8 +128,8 @@ export default async function Page() {
         </div>
         <div className="mx-auto text-center md:max-w-[58rem]">
           <p className="leading-normal text-muted-foreground sm:text-lg sm:leading-7">
-            Taxonomy also includes a blog and a full-featured documentation site
-            built using Contentlayer and MDX.
+            Taxonomy also includes a blog and a full-featured documentation site built using
+            Contentlayer and MDX.
           </p>
         </div>
       </section>

@@ -8,17 +8,17 @@ export const validPassword = (password: string) => {
   if (!/\d+/.test(password)) return false;
 
   return true;
-}
+};
 
 export const hashPassword = async (password: string) => {
   const hashedPassword = await hash(password, 12);
   return hashedPassword;
-}
+};
 
 export const verifyPassword = async (password: string, hashedPassword: string) => {
   const isValid = await compare(password, hashedPassword);
   return isValid;
-}
+};
 
 export enum AuthErrorCode {
   UserNotFound = "user-not-found",

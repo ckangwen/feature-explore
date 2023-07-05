@@ -33,9 +33,7 @@ export default withAuth(
         from += req.nextUrl.search;
       }
 
-      return NextResponse.redirect(
-        new URL(`/signin?from=${encodeURIComponent(from)}`, req.url)
-      );
+      return NextResponse.redirect(new URL(`/signin?from=${encodeURIComponent(from)}`, req.url));
     }
 
     if (nextPath === "/") {
@@ -53,5 +51,5 @@ export default withAuth(
         return true;
       },
     },
-  }
+  },
 );

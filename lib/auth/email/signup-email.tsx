@@ -15,9 +15,7 @@ import {
 import { render } from "@react-email/render";
 
 const verifyUrl = `${
-  process.env.NODE_ENV === "production"
-    ? process.env.VERCEL_URL
-    : "http://localhost:3000"
+  process.env.NODE_ENV === "production" ? process.env.VERCEL_URL : "http://localhost:3000"
 }/api/auth/verify`;
 
 interface SignUpEmailProps {

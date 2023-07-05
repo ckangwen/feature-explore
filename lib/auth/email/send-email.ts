@@ -22,7 +22,7 @@ export const encodeMagicLinkToken = (email: string) => {
     JSON.stringify({
       email,
       exp: Date.now() + MAX_AGE * 1000,
-    })
+    }),
   ).toString("base64");
 };
 

@@ -20,13 +20,9 @@ const useInsertionEffect =
  * - No dependency lists required
  * - Properties or state accessed within the callback will always be "current"
  */
-export function useEvent<TCallback extends AnyFunction>(
-  callback: TCallback,
-): TCallback {
+export function useEvent<TCallback extends AnyFunction>(callback: TCallback): TCallback {
   // Keep track of the latest callback:
-  const latestRef = React.useRef<TCallback>(
-    useEvent_shouldNotBeInvokedBeforeMount as any,
-  );
+  const latestRef = React.useRef<TCallback>(useEvent_shouldNotBeInvokedBeforeMount as any);
   useInsertionEffect(() => {
     latestRef.current = callback;
   }, [callback]);

@@ -24,8 +24,7 @@ export function useUploadThing(opts?: UseUploadThingProps) {
         fileProgress.current.forEach((p) => {
           sum += p;
         });
-        const averageProgress =
-          Math.floor(sum / fileProgress.current.size / 10) * 10;
+        const averageProgress = Math.floor(sum / fileProgress.current.size / 10) * 10;
         if (averageProgress !== uploadProgress.current) {
           opts?.onProgress?.(averageProgress);
           uploadProgress.current = averageProgress;

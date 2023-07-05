@@ -7,7 +7,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { cn } from "@/lib/utils";
 import { userAuthSchema, UserAuthSchema } from "auth/schema";
 import { signIn } from "next-auth/react";
-import { useRouter } from 'next/navigation';
+import { useRouter } from "next/navigation";
 import { Input, Label, toast, buttonVariants, Icons } from "ui";
 import { IResponse } from "@/types";
 
@@ -16,11 +16,7 @@ interface UserAuthFormProps {
   signUp?: boolean;
 }
 
-export default function UserAuthForm({
-  className,
-  signUp = false,
-  ...props
-}: UserAuthFormProps) {
+export default function UserAuthForm({ className, signUp = false, ...props }: UserAuthFormProps) {
   const {
     register,
     handleSubmit,
@@ -108,11 +104,7 @@ export default function UserAuthForm({
               disabled={isLoading}
               {...register("email")}
             />
-            {errors?.email && (
-              <p className="px-1 text-xs text-red-600">
-                {errors.email.message}
-              </p>
-            )}
+            {errors?.email && <p className="px-1 text-xs text-red-600">{errors.email.message}</p>}
           </div>
           <div className="grid gap-1">
             <Label className="sr-only" htmlFor="email">
@@ -127,19 +119,11 @@ export default function UserAuthForm({
               {...register("password")}
             />
             {errors?.password && (
-              <p className="px-1 text-xs text-red-600">
-                {errors.password.message}
-              </p>
+              <p className="px-1 text-xs text-red-600">{errors.password.message}</p>
             )}
           </div>
-          <button
-            type="submit"
-            className={cn(buttonVariants())}
-            disabled={isLoading}
-          >
-            {isLoading && (
-              <Icons.spinner className="mr-2 h-4 w-4 animate-spin" />
-            )}
+          <button type="submit" className={cn(buttonVariants())} disabled={isLoading}>
+            {isLoading && <Icons.spinner className="mr-2 h-4 w-4 animate-spin" />}
             Sign In with Email
           </button>
         </div>

@@ -10,9 +10,7 @@ interface MarketingLayoutProps {
   children: ReactNode;
 }
 
-export default async function MarketingLayout({
-  children,
-}: MarketingLayoutProps) {
+export default async function MarketingLayout({ children }: MarketingLayoutProps) {
   return (
     <div className="flex min-h-screen flex-col">
       <header className="container z-40 bg-background">
@@ -21,10 +19,7 @@ export default async function MarketingLayout({
           <nav>
             <Link
               href="/signin"
-              className={cn(
-                buttonVariants({ variant: "secondary", size: "sm" }),
-                "px-4"
-              )}
+              className={cn(buttonVariants({ variant: "secondary", size: "sm" }), "px-4")}
             >
               Login
             </Link>

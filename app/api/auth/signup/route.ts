@@ -16,7 +16,7 @@ async function handler(req: Request) {
       JSON.stringify({
         ok: false,
         message: "Invalid email",
-      })
+      }),
     );
   }
 
@@ -25,7 +25,7 @@ async function handler(req: Request) {
       JSON.stringify({
         message: "Password should be at least 7 characters long.",
         ok: false,
-      })
+      }),
     );
   }
 
@@ -40,7 +40,7 @@ async function handler(req: Request) {
       JSON.stringify({
         message: "该邮箱已被注册",
         ok: false,
-      })
+      }),
     );
   }
 
@@ -58,15 +58,13 @@ async function handler(req: Request) {
     },
   });
 
-
-
   const emailRes = await sendSignUpEmail(cleanEmail);
 
   return new Response(
     JSON.stringify({
       ...emailRes,
       data: newUser,
-    })
+    }),
   );
 }
 
